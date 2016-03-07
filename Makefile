@@ -5,7 +5,9 @@ SUBD := $(shell pwd)
 SRC=src/
 
 obj-m += SBD.o
-SBD-objs += $(SRC)sbd.o $(SRC)sbd_api.o 
+SBD-objs += $(SRC)sbd.o
+obj-m +=SBD_API.o
+SBD_API-objs +=$(SRC)sbd_api.o 
 
 all: default 
 

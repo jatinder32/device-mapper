@@ -17,3 +17,5 @@ static void __exit sbd_exit(void)
 
 module_init(sbd_init);
 module_exit(sbd_exit);
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("jatinder");

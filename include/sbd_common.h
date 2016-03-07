@@ -4,7 +4,5 @@
 #include <linux/init.h>
 #include <linux/module.h>
 
-
-
 extern  int		myfunction(void);
 #endif 
