@@ -10,14 +10,14 @@ EXPORT_SYMBOL(myfunction);
 
 static int __init sbd_api_init(void)
 {
-	printk("hello from %s file\n", __FILE__);
+	printk(KERN_INFO "hello from %s file\n", __FILE__);
 
 	return 0;
 }
 
 static void __exit sbd_api_exit(void)
 {
-	printk("exit from %\n", __func__);
+	printk(KERN_INFO "exit from  %s\n", __func__);
 
 
 }
