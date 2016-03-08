@@ -3,7 +3,7 @@ INSTALL_DIR=modules
 INCLUDE=include/
 SUBD := $(shell pwd)
 SRC=src/
-
+EXTRA_CFLAGS=-D__KERNEL__ -DMODULE -DSBD_DEBUG
 obj-m += SBD.o
 SBD-objs += $(SRC)sbd.o
 obj-m +=SBD_API.o
