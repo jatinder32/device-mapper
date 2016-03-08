@@ -6,6 +6,7 @@
 #include <linux/spinlock.h>
 #include <linux/slab.h>
 #include <linux/genhd.h>
+#include <linux/blkdev.h>
 
 #ifdef SBD_DEBUG 
 #    define ENTRY       printk("<1>SDB : ===>> Entering function %s", __FUNCTION__); \
@@ -45,12 +46,19 @@ struct SBD
         struct request_queue *req;
 } *sbd;
 
-/*int sbd_init(void);
+int sbd_init(void);
 void req_fun(struct request_queue *);
 int sbd_open(struct block_device *, fmode_t);
 int sbd_release(struct gendisk *, fmode_t);
 void sbd_transfer(char *buffer,struct request *req,int num);
-*/
+
+struct block_device_operations bops=
+{
+        .owner = THIS_MODULE,
+        .open  = sbd_open,
+        .release = sbd_release
+
+};
 
 
 extern  int		myfunction(void);
